@@ -2,19 +2,18 @@
 
 A single-player, turn-based startup business simulation. Each turn represents one business quarter. The player inputs decisions, advances the turn, and the server runs the simulation model, persists state in Postgres (via Supabase), and returns updated results.
 
-## Setup (under 5 commands)
+## Setup
 
 ```bash
-cd startup-sim
-cp .env.example .env.local
-# Edit .env.local with your Supabase URL and anon key
+cp .env.example .env
+# Edit .env with your Supabase URL and anon key
 npm install
 # Run migrations in Supabase SQL Editor (in order): 001_initial_schema.sql, then 002_add_quarters_delete_policy.sql
 npm run dev
 ```
 
 1. Create a [Supabase](https://supabase.com) project
-2. Copy the project URL and anon key to `.env.local`
+2. Copy the project URL and anon key to `.env`
 3. Run the SQL migration in Supabase Dashboard → SQL Editor
 4. `npm run dev` and open http://localhost:3000
 
@@ -58,7 +57,3 @@ npm run test:coverage  # With coverage report
 ## Known Issues
 
 - None at this time.
-
-## Constants
-
-All simulation constants match the PRD exactly. No adjustments made.
