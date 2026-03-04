@@ -41,6 +41,7 @@ export function DecisionPanel({ onAdvance, lastSalaryPct = 100 }: DecisionPanelP
 
     setLoading(false);
 
+    if (!result) return;
     if (result.errors) {
       setErrors(result.errors);
       return;
@@ -54,7 +55,7 @@ export function DecisionPanel({ onAdvance, lastSalaryPct = 100 }: DecisionPanelP
   return (
     <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
       <h2 className="mb-4 text-lg font-semibold">Quarterly Decisions</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form data-testid="decision-form" onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="price" className="mb-1 block text-sm text-slate-300">
             Unit Price ($)

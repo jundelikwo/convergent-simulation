@@ -41,6 +41,20 @@ npm run dev
 - Multiple games per user (one game per user, reset on "Start New Game").
 - Email confirmation for sign up (Supabase can enable this; disabled for quick dev flow).
 
+## Testing
+
+```bash
+npm run test        # Watch mode
+npm run test:run    # Single run
+npm run test:coverage  # With coverage report
+```
+
+**Test coverage:**
+- **Simulation** (`src/lib/sim/simulation.test.ts`): 26+ tests for all formulas, edge cases, and multi-quarter chains
+- **Validation** (`src/lib/sim/validation.test.ts`): 18 tests for input validation
+- **Components**: DecisionPanel, HistoryTable, OfficeViz, DashboardCards, EndStatePanel
+- **Integration** (`simulation.integration.test.ts`): Full game scenarios (win path, bankruptcy, cumulative profit)
+
 ## Known Issues
 
 - None at this time.
